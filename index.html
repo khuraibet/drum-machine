@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <title>Drum Machine</title>
+
+        <script>
+            function play(str) {
+                let displayField = document.getElementById("display");
+                if (str === "q" || str === "Q") {
+                    displayField.innerHTML = "Heater 1";
+                } else if (str === "w" || str === "W") {
+                    displayField.innerHTML = "Heater 2";
+                } else if (str === "e" || str === "E") {
+                    displayField.innerHTML = "Heater 3";
+                } else if (str === "a" || str === "A") {
+                    displayField.innerHTML = "Heater 4";
+                } else if (str === "s" || str === "S") {
+                    displayField.innerHTML = "Clap";
+                } else if (str === "d" || str === "D") {
+                    displayField.innerHTML = "Open HH";
+                } else if (str === "z" || str === "Z") {
+                    displayField.innerHTML = "Kick n' Hat";
+                } else if (str === "x" || str === "X") {
+                    displayField.innerHTML = "Kick";
+                } else if (str === "c" || str === "C") {
+                    displayField.innerHTML = "Closed HH";
+                };
+
+                let audio = document.getElementById(str);
+                audio.play();
+            };
+
+            window.document.onkeyup = function(event) {
+                let keystroke = event.key; 
+                if (keystroke === "q" || keystroke === "Q") {
+                    play("Q");
+                } else if (keystroke === "w" || keystroke === "W") {
+                    play("W");
+                } else if (keystroke === "e" || keystroke === "E") {
+                    play("E");
+                } else if (keystroke === "a" || keystroke === "A") {
+                    play("A");
+                } else if (keystroke === "s" || keystroke === "S") {
+                    play("S");
+                } else if (keystroke === "d" || keystroke === "D") {
+                    play("D");
+                } else if (keystroke === "z" || keystroke === "Z") {
+                    play("Z");
+                } else if (keystroke === "x" || keystroke === "X") {
+                    play("X");
+                } else if (keystroke === "c" || keystroke === "C") {
+                    play("C");
+                };
+            }
+        </script>
+    </head>
+
+    <body style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+        <div class="container" id="drum-machine">
+            <h1 class="text-center my-3"><strong>Drum Machine</strong></h1>
+            <div class="card my-3 rounded-pill">
+                <div class="card-body">
+                    <div class="text-center" id="display">Press a Button to Drop a Beat!</div>
+                </div>
+            </div>
+            <button class="drum-pad btn btn-block btn-primary py-5 px-5 rounded-pill" id="drum-0" onclick="play('Q')">
+                Q
+                <audio src="./audio/Heater-1.mp3" class="clip" id="Q"></audio>
+            </button>
+            <button class="drum-pad btn btn-block btn-secondary py-5 px-5 rounded-pill" id="drum-1" onclick="play('W')">
+                W
+                <audio src="./audio/Heater-2.mp3" class="clip" id="W"></audio>
+            </button>
+            <button class="drum-pad btn btn-block btn-success py-5 px-5 rounded-pill" id="drum-2" onclick="play('E')">
+                E
+                <audio src="./audio/Heater-3.mp3" class="clip" id="E"></audio>
+            </button>
+            <button class="drum-pad btn btn-block btn-danger py-5 px-5 rounded-pill" id="drum-3" onclick="play('A')">
+                A
+                <audio src="./audio/Heater-4_1.mp3" class="clip" id="A"></audio>
+            </button>
+            <button class="drum-pad btn btn-block btn-warning py-5 px-5 rounded-pill" id="drum-4" onclick="play('S')">
+                S
+                <audio src="./audio/Heater-6.mp3" class="clip" id="S"></audio>
+            </button>
+            <button class="drum-pad btn btn-block btn-info py-5 px-5 rounded-pill" id="drum-5" onclick="play('D')">
+                D
+                <audio src="./audio/Dsc_Oh.mp3" class="clip" id="D"></audio>
+            </button>
+            <button class="drum-pad btn btn-block btn-light py-5 px-5 rounded-pill border border-secondary" id="drum-6" onclick="play('Z')">
+                Z
+                <audio src="./audio/Kick_n_Hat.mp3" class="clip" id="Z"></audio>
+            </button>
+            <button class="drum-pad btn btn-block btn-dark py-5 px-5 rounded-pill" id="drum-7" onclick="play('X')">
+                X
+                <audio src="./audio/RP4_KICK_1.mp3" class="clip" id="X"></audio>
+            </button>
+            <button class="drum-pad btn btn-block btn-white py-5 px-5 mb-3 rounded-pill border border-secondary" style="" id="drum-8" onclick="play('C')">
+                C
+                <audio src="./audio/Cev_H2.mp3" class="clip" id="C"></audio>
+            </button>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </body>
+</html>
